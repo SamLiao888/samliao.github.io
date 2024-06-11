@@ -11,7 +11,6 @@ isDrawing = true;
 
 function draw(e) {
 if (!isDrawing) return;
-e.preventDefault(); // 防止滾動
 ctx.beginPath();
 ctx.moveTo(lastX, lastY);
 ctx.lineTo(e.offsetX, e.offsetY);
