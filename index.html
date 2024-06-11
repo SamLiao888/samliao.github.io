@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      #signature-pad {
+        border: 1px solid #000;
+        touch-action: none; /* 防止在簽名時滾動 */
+      }
+    </style>
+  </head>
   <body>
-    <canvas
-      id="signature-pad"
-      width="300"
-      height="200"
-      style="border: 1px solid #000"
-    ></canvas>
+    <h2>我的數據表格</h2>
+
+    <table>
+      <tr>
+        <th>姓名</th>
+        <th>年齡</th>
+        <th>城市</th>
+        <th>簽名</th>
+      </tr>
+      <tr>
+        <td>張三</td>
+        <td>28</td>
+        <td>上海</td>
+        <td><canvas id="signature-pad" width="200" height="100"></canvas></td>
+      </tr>
+      <!-- 其他數據行 -->
+    </table>
     <br />
-    <button id="clear-btn">清除</button>
-    <button id="save-btn">儲存</button>
+    <button id="save-btn">保存簽名</button>
 
     <script>
       // 獲取<canvas>元素和繪圖上下文
@@ -22,23 +61,10 @@
       // 繪製簽名的函數
       function drawSignature(event) {
         if (!drawing) return;
-        ctx.lineTo(
-          event.clientX - canvas.offsetLeft,
-          event.clientY - canvas.offsetTop
-        );
+        var x = event.clientX - canvas.offsetLeft;
+        var y = event.clientY - canvas.offsetTop;
+        ctx.lineTo(x, y);
         ctx.stroke();
-      }
-
-      // 清除簽名板的函數
-      function clearCanvas() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-      }
-
-      // 儲存簽名的函數
-      function saveSignature() {
-        var dataURL = canvas.toDataURL("image/png");
-        // 這裡可以將dataURL發送到服務器或進行其他處理
-        console.log(dataURL);
       }
 
       // 防止滾動的函數
@@ -54,7 +80,6 @@
           event.clientX - canvas.offsetLeft,
           event.clientY - canvas.offsetTop
         );
-        // 防止滾動
         document.body.addEventListener("touchmove", preventScroll, {
           passive: false,
         });
@@ -66,7 +91,6 @@
       // 監聽繪製結束的事件
       canvas.addEventListener("mouseup", function () {
         drawing = false;
-        // 移除防止滾動的事件監聽器
         document.body.removeEventListener("touchmove", preventScroll, {
           passive: false,
         });
@@ -83,7 +107,6 @@
             touch.clientX - canvas.offsetLeft,
             touch.clientY - canvas.offsetTop
           );
-          // 防止滾動
           document.body.addEventListener("touchmove", preventScroll, {
             passive: false,
           });
@@ -94,8 +117,10 @@
       canvas.addEventListener(
         "touchmove",
         function (event) {
-          var touch = event.touches[0];
-          drawSignature(touch);
+          if (event.touches.length == 1) {
+            var touch = event.touches[0];
+            drawSignature(touch);
+          }
         },
         false
       );
@@ -104,7 +129,6 @@
         "touchend",
         function () {
           drawing = false;
-          // 移除防止滾動的事件監聽器
           document.body.removeEventListener("touchmove", preventScroll, {
             passive: false,
           });
@@ -112,12 +136,14 @@
         false
       );
 
-      // 為清除按鈕添加事件監聽器
-      document
-        .getElementById("clear-btn")
-        .addEventListener("click", clearCanvas);
+      // 儲存簽名的函數
+      function saveSignature() {
+        var dataURL = canvas.toDataURL("image/png");
+        // 這裡可以將dataURL發送到服務器或進行其他處理
+        console.log(dataURL);
+      }
 
-      // 為儲存按鈕添加事件監聽器
+      // 為保存按鈕添加事件監聽器
       document
         .getElementById("save-btn")
         .addEventListener("click", saveSignature);
