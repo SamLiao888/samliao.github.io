@@ -1,16 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>簽名板範例</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+<html>
   <body>
-    <canvas id="signature-pad" width="400" height="200"></canvas>
-    <button id="save">保存簽名</button>
-    <button id="clear">清除簽名</button>
+    <canvas
+      id="signature-pad"
+      width="300"
+      height="200"
+      style="border: 1px solid #000"
+    ></canvas>
 
-    <script src="script.js"></script>
+    <script>
+      // 獲取<canvas>元素和繪圖上下文
+      var canvas = document.getElementById("signature-pad");
+      var ctx = canvas.getContext("2d");
+
+      // 設置繪製開始的標誌
+      var drawing = false;
+
+      // 繪製簽名的函數
+      function drawSignature(event) {
+        if (!drawing) return;
+        ctx.lineTo(
+          event.clientX - canvas.offsetLeft,
+          event.clientY - canvas.offsetTop
+        );
+        ctx.stroke();
+      }
+
+      // 監聽繪製開始的事件
+      canvas.addEventListener("mousedown", function (event) {
+        drawing = true;
+        ctx.beginPath();
+        ctx.moveTo(
+          event.clientX - canvas.offsetLeft,
+          event.clientY - canvas.offsetTop
+        );
+      });
+
+      // 監聽繪製過程的事件
+      canvas.addEventListener("mousemove", drawSignature);
+
+      // 監聽繪製結束的事件
+      canvas.addEventListener("mouseup", function () {
+        drawing = false;
+      });
+
+      // 監聽觸摸事件，以支持觸摸屏設備
+      canvas.addEventListener(
+        "touchstart",
+        function (event) {
+          var touch = event.touches[0];
+          drawing = true;
+          ctx.beginPath();
+          ctx.moveTo(
+            touch.clientX - canvas.offsetLeft,
+            touch.clientY - canvas.offsetTop
+          );
+        },
+        false
+      );
+
+      canvas.addEventListener(
+        "touchmove",
+        function (event) {
+          var touch = event.touches[0];
+          drawSignature(touch);
+        },
+        false
+      );
+
+      canvas.addEventListener(
+        "touchend",
+        function () {
+          drawing = false;
+        },
+        false
+      );
+    </script>
   </body>
 </html>
