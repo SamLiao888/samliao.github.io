@@ -1,80 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <canvas
-      id="signature-pad"
-      width="300"
-      height="200"
-      style="border: 1px solid #000"
-    ></canvas>
+<body>
 
-    <script>
-      // 獲取<canvas>元素和繪圖上下文
-      var canvas = document.getElementById("signature-pad");
-      var ctx = canvas.getContext("2d");
+<canvas id="signature-pad" width="300" height="200" style="border:1px solid #000;"></canvas>
+<br>
+<button id="clear-btn">清除</button>
+<button id="save-btn">儲存</button>
 
-      // 設置繪製開始的標誌
-      var drawing = false;
+<script>
+// 獲取<canvas>元素和繪圖上下文
+var canvas = document.getElementById('signature-pad');
+var ctx = canvas.getContext('2d');
 
-      // 繪製簽名的函數
-      function drawSignature(event) {
-        if (!drawing) return;
-        ctx.lineTo(
-          event.clientX - canvas.offsetLeft,
-          event.clientY - canvas.offsetTop
-        );
-        ctx.stroke();
-      }
+// 設置繪製開始的標誌
+var drawing = false;
 
-      // 監聽繪製開始的事件
-      canvas.addEventListener("mousedown", function (event) {
-        drawing = true;
-        ctx.beginPath();
-        ctx.moveTo(
-          event.clientX - canvas.offsetLeft,
-          event.clientY - canvas.offsetTop
-        );
-      });
+// 繪製簽名的函數
+function drawSignature(event) {
+if (!drawing) return;
+ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+ctx.stroke();
+}
 
-      // 監聽繪製過程的事件
-      canvas.addEventListener("mousemove", drawSignature);
+// 清除簽名板的函數
+function clearCanvas() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
 
-      // 監聽繪製結束的事件
-      canvas.addEventListener("mouseup", function () {
-        drawing = false;
-      });
+// 儲存簽名的函數
+function saveSignature() {
+var dataURL = canvas.toDataURL('image/png');
+// 這裡可以將dataURL發送到服務器或進行其他處理
+console.log(dataURL);
+}
 
-      // 監聽觸摸事件，以支持觸摸屏設備
-      canvas.addEventListener(
-        "touchstart",
-        function (event) {
-          var touch = event.touches[0];
-          drawing = true;
-          ctx.beginPath();
-          ctx.moveTo(
-            touch.clientX - canvas.offsetLeft,
-            touch.clientY - canvas.offsetTop
-          );
-        },
-        false
-      );
+// 監聽繪製開始的事件
+canvas.addEventListener('mousedown', function(event) {
+drawing = true;
+ctx.beginPath();
+ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+});
 
-      canvas.addEventListener(
-        "touchmove",
-        function (event) {
-          var touch = event.touches[0];
-          drawSignature(touch);
-        },
-        false
-      );
+// 監聽繪製過程的事件
+canvas.addEventListener('mousemove', drawSignature);
 
-      canvas.addEventListener(
-        "touchend",
-        function () {
-          drawing = false;
-        },
-        false
-      );
-    </script>
-  </body>
+// 監聽繪製結束的事件
+canvas.addEventListener('mouseup', function() {
+drawing = false;
+});
+
+// 監聽觸摸事件，以支持觸摸屏設備
+canvas.addEventListener('touchstart', function(event) {
+var touch = event.touches[0];
+drawing = true;
+ctx.beginPath();
+ctx.moveTo(touch.clientX - canvas.offsetLeft, touch.clientY - canvas.offsetTop);
+}, false);
+
+canvas.addEventListener('touchmove', function(event) {
+var touch = event.touches[0];
+drawSignature(touch);
+}, false);
+
+canvas.addEventListener('touchend', function() {
+drawing = false;
+}, false);
+
+// 為清除按鈕添加事件監聽器
+document.getElementById('clear-btn').addEventListener('click', clearCanvas);
+
+// 為儲存按鈕添加事件監聽器
+document.getElementById('save-btn').addEventListener('click', saveSignature);
+
+</script>
+
+</body>
 </html>
