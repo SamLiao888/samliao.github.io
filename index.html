@@ -1,152 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
   <head>
+    <meta charset="UTF-8" />
+    <title>手寫簽名表格</title>
     <style>
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-
       table,
       th,
       td {
         border: 1px solid black;
+        border-collapse: collapse;
       }
-
       th,
       td {
-        padding: 8px;
-        text-align: left;
-      }
-
-      th {
-        background-color: #f2f2f2;
-      }
-
-      #signature-pad {
-        border: 1px solid #000;
-        touch-action: none; /* 防止在簽名時滾動 */
+        padding: 10px;
+        text-align: center;
       }
     </style>
+    <script>
+      // 打開簽名頁面的函數
+      function openSignaturePage() {
+        window.open(
+          "signature.html",
+          "signatureWindow",
+          "width=400,height=400"
+        );
+      }
+
+      // 更新簽名的函數
+      function updateSignature(signatureData) {
+        var img = document.createElement("img");
+        img.src = signatureData;
+        document.getElementById("signatureCell").innerHTML = "";
+        document.getElementById("signatureCell").appendChild(img);
+      }
+    </script>
   </head>
   <body>
-    <h2>我的數據表格</h2>
-
     <table>
       <tr>
-        <th>姓名</th>
-        <th>年齡</th>
-        <th>城市</th>
-        <th>簽名</th>
+        <td
+          id="signatureCell"
+          onclick="openSignaturePage()"
+          style="cursor: pointer"
+        >
+          點擊這裡簽名
+        </td>
       </tr>
       <tr>
-        <td>張三</td>
-        <td>28</td>
-        <td>上海</td>
-        <td><canvas id="signature-pad" width="200" height="100"></canvas></td>
+        <td>單元格2</td>
       </tr>
-      <!-- 其他數據行 -->
     </table>
-    <br />
-    <button id="save-btn">保存簽名</button>
-
-    <script>
-      // 獲取<canvas>元素和繪圖上下文
-      var canvas = document.getElementById("signature-pad");
-      var ctx = canvas.getContext("2d");
-
-      // 設置繪製開始的標誌
-      var drawing = false;
-
-      // 繪製簽名的函數
-      function drawSignature(event) {
-        if (!drawing) return;
-        var x = event.clientX - canvas.offsetLeft;
-        var y = event.clientY - canvas.offsetTop;
-        ctx.lineTo(x, y);
-        ctx.stroke();
-      }
-
-      // 防止滾動的函數
-      function preventScroll(event) {
-        event.preventDefault();
-      }
-
-      // 監聽繪製開始的事件
-      canvas.addEventListener("mousedown", function (event) {
-        drawing = true;
-        ctx.beginPath();
-        ctx.moveTo(
-          event.clientX - canvas.offsetLeft,
-          event.clientY - canvas.offsetTop
-        );
-        document.body.addEventListener("touchmove", preventScroll, {
-          passive: false,
-        });
-      });
-
-      // 監聽繪製過程的事件
-      canvas.addEventListener("mousemove", drawSignature);
-
-      // 監聽繪製結束的事件
-      canvas.addEventListener("mouseup", function () {
-        drawing = false;
-        document.body.removeEventListener("touchmove", preventScroll, {
-          passive: false,
-        });
-      });
-
-      // 監聽觸摸事件，以支持觸摸屏設備
-      canvas.addEventListener(
-        "touchstart",
-        function (event) {
-          var touch = event.touches[0];
-          drawing = true;
-          ctx.beginPath();
-          ctx.moveTo(
-            touch.clientX - canvas.offsetLeft,
-            touch.clientY - canvas.offsetTop
-          );
-          document.body.addEventListener("touchmove", preventScroll, {
-            passive: false,
-          });
-        },
-        false
-      );
-
-      canvas.addEventListener(
-        "touchmove",
-        function (event) {
-          if (event.touches.length == 1) {
-            var touch = event.touches[0];
-            drawSignature(touch);
-          }
-        },
-        false
-      );
-
-      canvas.addEventListener(
-        "touchend",
-        function () {
-          drawing = false;
-          document.body.removeEventListener("touchmove", preventScroll, {
-            passive: false,
-          });
-        },
-        false
-      );
-
-      // 儲存簽名的函數
-      function saveSignature() {
-        var dataURL = canvas.toDataURL("image/png");
-        // 這裡可以將dataURL發送到服務器或進行其他處理
-        console.log(dataURL);
-      }
-
-      // 為保存按鈕添加事件監聽器
-      document
-        .getElementById("save-btn")
-        .addEventListener("click", saveSignature);
-    </script>
   </body>
 </html>
+
