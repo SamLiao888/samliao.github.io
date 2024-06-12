@@ -1,0 +1,85 @@
+<!-- 簽名頁面 (signature.html) -->
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <title>簽名頁面</title>
+    <style>
+      canvas {
+        border: 1px solid #000;
+      }
+    </style>
+    <script>
+      // 儲存簽名並返回主頁面的函數
+      function saveSignature() {
+        var canvas = document.getElementById("signaturePad");
+        var dataURL = canvas.toDataURL();
+        window.opener.updateSignature(dataURL);
+        window.close();
+      }
+
+      // 初始化簽名畫布
+      function initCanvas() {
+        var canvas = document.getElementById("signaturePad");
+        var ctx = canvas.getContext("2d");
+        var drawing = false;
+        var prevX, prevY;
+
+        canvas.addEventListener(
+          "touchstart",
+          function (e) {
+            var touch = e.touches[0];
+            drawing = true;
+            prevX = touch.clientX - canvas.offsetLeft;
+            prevY = touch.clientY - canvas.offsetTop;
+            e.preventDefault();
+          },
+          false
+        );
+
+        canvas.addEventListener(
+          "touchmove",
+          function (e) {
+            if (drawing) {
+              var touch = e.touches[0];
+              var currX = touch.clientX - canvas.offsetLeft;
+              var currY = touch.clientY - canvas.offsetTop;
+              ctx.beginPath();
+              ctx.moveTo(prevX, prevY);
+              ctx.lineTo(currX, currY);
+              ctx.strokeStyle = "black";
+              ctx.lineWidth = 2;
+              ctx.stroke();
+              ctx.closePath();
+              prevX = currX;
+              prevY = currY;
+            }
+            e.preventDefault();
+          },
+          false
+        );
+
+        canvas.addEventListener(
+          "touchend",
+          function (e) {
+            drawing = false;
+            e.preventDefault();
+          },
+          false
+        );
+
+        canvas.addEventListener(
+          "touchcancel",
+          function (e) {
+            drawing = false;
+          },
+          false
+        );
+      }
+    </script>
+  </head>
+  <body onload="initCanvas()">
+    <canvas id="signaturePad" width="300" height="200"></canvas>
+    <button onclick="saveSignature()">儲存簽名</button>
+  </body>
+</html>
