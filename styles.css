@@ -1,5 +1,144 @@
-#signature-pad {
-    border: 1px solid #000;
-    background-color: #fff;
-    }
-    
+.container {
+    width: 210mm; /* A4 紙張寬度 */
+    /* height: 297mm; A4 紙張高度 */
+    margin-left: auto; /* 將表格置中 */
+    margin-right: auto; /* 將表格置中 */
+    margin: 0 auto; /* 水平置中 */
+    padding: 0mm; /* 設置容器內部的內距 */
+  }
+  .container_2 {
+    width: 210mm; /* A4 紙張寬度 */
+    /* height: 297mm; A4 紙張高度 */
+    margin: 0 auto; /* 水平置中 */
+    padding: 0mm; /* 設置容器內部的內距 */
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 0mm; /* 將表格往上移 */
+    margin-left: auto; /* 將表格置中 */
+    margin-right: auto; /* 將表格置中 */
+    border-spacing: 0; /* 設置表格的邊距 */
+    /* font-size: 18px; 設置特定儲存格的字體大小 */
+    border: none; /*將表格的邊框修改成無 */
+  }
+
+  .table_2 {
+    border-collapse: collapse;
+    width: 210mm; /* A4 紙張寬度 */
+    margin-top: -0.5mm; /* 將表格往上移 */
+    margin-left: auto; /* 將表格置中 */
+    margin-right: auto; /* 將表格置中 */
+    border-spacing: 2px; /* 設置表格的邊距 */
+    border: 2px solid black; /* 將表格的邊框修改成黑色 */
+  }
+  .table_3 {
+    border-collapse: collapse;
+    width: 210mm; /* A4 紙張寬度 */
+    height: 10mm; /*A4 紙張高度 */
+    margin-top: 0mm; /* 將表格往上移 */
+    margin-left: auto; /* 將表格置中 */
+    margin-right: auto; /* 將表格置中 */
+    border-spacing: 1px; /* 設置表格的邊距 */
+    border: 2px solid black; /* 將表格的邊框修改成黑色 */
+  }
+
+  td {
+    padding: 5px; /* 設置儲存格的內距 */
+    border: 1px solid black; /*設置儲存格的邊框 */
+    text-align: center; /*將文字置中 */
+    font-size: 12px; /* 設置字體大小 */
+    /* width: calc(100% / 8); 設置每個儲存格的寬度 */
+    /* width: calc(210mm / 8); */
+    width: 26.25mm;
+    /* height: 3mm; */
+  }
+
+  .company-text {
+    font-size: 26px; /* 設置特定儲存格的字體大小 */
+    font-family: "標楷體"; /* 設置文字的字型 */
+    font-weight: bold; /* 設置文字為粗體 */
+  }
+  .address-text {
+    font-size: 18px; /* 設置特定儲存格的字體大小 */
+    text-align: left; /* 將文字靠左排列 */
+    font-family: "標楷體"; /* 設置文字的字型 */
+    font-weight: bold; /* 設置文字為粗體 */
+  }
+  .left-align {
+    font-size: 16px; /* 設置特定儲存格的字體大小 */
+    text-align: left; /* 將文字靠左排列 */
+    font-family: "標楷體"; /* 設置文字的字型 */
+    font-weight: bold; /* 設置文字為粗體 */
+  }
+  .right-align {
+    font-size: 16px; /* 設置特定儲存格的字體大小 */
+    text-align: right; /* 將文字靠右排列 */
+    font-family: "標楷體"; /* 設置文字的字型 */
+    font-weight: bold; /* 設置文字為粗體 */
+  }
+  .center-align {
+    font-size: 16px; /* 設置特定儲存格的字體大小 */
+    text-align: center; /* 將文字置中排列 */
+    font-family: "標楷體"; /* 設置文字的字型 */
+    font-weight: bold; /* 設置文字為粗體 */
+  }
+  .input-box {
+    width: 100%; /* 設置輸入框的寬度 */
+    height: 90%; /* 設置輸入框的高度 */
+    padding: 2px; /* 設置輸入框的內距 */
+    font-family: "標楷體"; /* 設置文字的字型 */
+    border: none; /* 將表格的邊框修改成無 */
+  }
+  .input-textarea {
+    width: 100%; /* 設置輸入框的寬度 */
+    height: 30mm; /* 設置輸入框的高度 */
+    padding: 2px; /* 設置輸入框的內距 */
+    font-family: "標楷體"; /* 設置文字的字型 */
+    border: none; /* 將表格的邊框修改成無 */
+    white-space: pre-wrap; /* 設置文字換行 */
+    word-break: break-all; /* 設置文字在到達邊界時自動斷行 */
+    top: 0;
+    left: 0;
+  }
+  .check-box {
+    width: 12px; /* 設置輸入框的寬度 */
+    height: 12px; /* 設置輸入框的高度 */
+    padding: 2px; /* 設置輸入框的內距 */
+    border: none; /* 將表格的邊框修改成無 */
+  }
+  select {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    appearance: none; /* 將下拉選單的箭頭覆蓋掉 */
+    font-family: "標楷體"; /* 設置文字的字型 */
+  }
+  #signatureCanvas {
+    border: 1px solid black;
+  }
+
+  #dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+  }
+
+  #dialogContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+  }
+
+  #dialogContent button {
+    margin-top: 10px;
+  }
