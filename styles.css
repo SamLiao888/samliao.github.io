@@ -36,7 +36,7 @@
   .table_3 {
     border-collapse: collapse;
     width: 200mm; /* A4 紙張寬度 */
-    height: 10mm; /*A4 紙張高度 */
+    height: 8mm; /*A4 紙張高度 */
     margin-top: 0mm; /* 將表格往上移 */
     margin-left: auto; /* 將表格置中 */
     margin-right: auto; /* 將表格置中 */
@@ -52,7 +52,7 @@
     /* width: calc(100% / 8); 設置每個儲存格的寬度 */
     /* width: calc(210mm / 8); */
     width: 26.25mm;
-   height: 10mm; 
+   height: 8mm; 
   }
 
   .company-text {
