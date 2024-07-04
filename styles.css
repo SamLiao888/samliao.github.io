@@ -1,5 +1,5 @@
-/*@font-face { font-family: '標楷體'; src: url('kaiu.ttf') format('truetype');
-}*/
+@font-face { font-family: '標楷體'; src: url('kaiu.ttf') format('truetype');
+}
 .container {
     width: 185mm; /* A4 紙張寬度 */
     height: 220mm; /* A4 紙張高度 */ 
