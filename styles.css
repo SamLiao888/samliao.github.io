@@ -1,5 +1,5 @@
 .container {
-    width: 180mm; /* A4 紙張寬度 */
+    width: 190mm; /* A4 紙張寬度 */
     height: 225mm; /* A4 紙張高度 */ 
     margin-left: auto; /* 將表格置中 */
     margin-right: auto; /* 將表格置中 */
@@ -7,7 +7,7 @@
     padding: 0mm; /* 設置容器內部的內距 */
   }
   .container_2 {
-    width: 180mm; /* A4 紙張寬度 */
+    width: 190mm; /* A4 紙張寬度 */
     /* height: 297mm; A4 紙張高度 */
     margin: 0 auto; /* 水平置中 */
     padding: 0mm; /* 設置容器內部的內距 */
@@ -43,7 +43,7 @@
     /* width: calc(100% / 8); 設置每個儲存格的寬度 */
     /* width: calc(210mm / 8); */
     width: 26.25mm;
-   height: 6mm; 
+   height: 5mm; 
   }
 
   .company-text {
