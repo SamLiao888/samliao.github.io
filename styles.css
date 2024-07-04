@@ -63,19 +63,19 @@
     font-weight: bold; /* 設置文字為粗體 */
   }
   .left-align {
-    font-size: 15px; /* 設置特定儲存格的字體大小 */
+    font-size: 12px; /* 設置特定儲存格的字體大小 */
     text-align: left; /* 將文字靠左排列 */
     font-family: "標楷體"; /* 設置文字的字型 */
     font-weight: bold; /* 設置文字為粗體 */
   }
   .right-align {
-    font-size: 15px; /* 設置特定儲存格的字體大小 */
+    font-size: 12px; /* 設置特定儲存格的字體大小 */
     text-align: right; /* 將文字靠右排列 */
     font-family: "標楷體"; /* 設置文字的字型 */
     font-weight: bold; /* 設置文字為粗體 */
   }
   .center-align {
-    font-size: 15px; /* 設置特定儲存格的字體大小 */
+    font-size: 12px; /* 設置特定儲存格的字體大小 */
     text-align: center; /* 將文字置中排列 */
     font-family: "標楷體"; /* 設置文字的字型 */
     font-weight: bold; /* 設置文字為粗體 */
