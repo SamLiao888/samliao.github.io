@@ -1,16 +1,3 @@
-@media print {
-  /* 隱藏網址 */
-  .url {
-    display: none !important;
-  }
-
-  /* 隱藏列印日期 */
-  .date {
-    display: none !important;
-  }
-}
-
-
 .container {
     width: 200mm; /* A4 紙張寬度 */
     /* height: 297mm; A4 紙張高度 */
@@ -65,7 +52,7 @@
     /* width: calc(100% / 8); 設置每個儲存格的寬度 */
     /* width: calc(210mm / 8); */
     width: 26.25mm;
-   height: 8mm; 
+   height: 10mm; 
   }
 
   .company-text {
