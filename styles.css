@@ -1,15 +1,15 @@
 /* @font-face { font-family: '標楷體'; src: url('kaiu.ttf') format('truetype');
 } */
 .container {
-    width: 160mm; /* A4 紙張寬度 */
-    height: 220mm; /* A4 紙張高度 */ 
+    width: 180mm; /* A4 紙張寬度 */
+    height: 210mm; /* A4 紙張高度 */ 
     margin-left: auto; /* 將表格置中 */
     margin-right: auto; /* 將表格置中 */
     margin: 0 auto; /* 水平置中 */
     padding: 0mm; /* 設置容器內部的內距 */
   }
   .container_2 {
-    width: 160mm; /* A4 紙張寬度 */
+    width: 180mm; /* A4 紙張寬度 */
     margin-left: auto; /* 將表格置中 */
     margin-right: auto; /* 將表格置中 */
     /* height: 297mm; A4 紙張高度 */
