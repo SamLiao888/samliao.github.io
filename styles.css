@@ -41,7 +41,7 @@
     padding: 0px; /* 設置儲存格的內距 */
     border: 1px solid black; /*設置儲存格的邊框 */
     text-align: center; /*將文字置中 */
-    font-size: 12px; /* 設置字體大小 */
+    font-size: 11px; /* 設置字體大小 */
     font-family: '標楷體', sans-serif;
     /* width: calc(100% / 8); 設置每個儲存格的寬度 */
     /* width: calc(210mm / 8); */
@@ -61,19 +61,19 @@
     font-weight: bold; /* 設置文字為粗體 */
   }
   .left-align {
-    font-size: 16px; /* 設置特定儲存格的字體大小 */
+    font-size: 15px; /* 設置特定儲存格的字體大小 */
     text-align: left; /* 將文字靠左排列 */
     font-family: "標楷體"; /* 設置文字的字型 */
     font-weight: bold; /* 設置文字為粗體 */
   }
   .right-align {
-    font-size: 16px; /* 設置特定儲存格的字體大小 */
+    font-size: 15px; /* 設置特定儲存格的字體大小 */
     text-align: right; /* 將文字靠右排列 */
     font-family: "標楷體"; /* 設置文字的字型 */
     font-weight: bold; /* 設置文字為粗體 */
   }
   .center-align {
-    font-size: 16px; /* 設置特定儲存格的字體大小 */
+    font-size: 15px; /* 設置特定儲存格的字體大小 */
     text-align: center; /* 將文字置中排列 */
     font-family: "標楷體"; /* 設置文字的字型 */
     font-weight: bold; /* 設置文字為粗體 */
@@ -112,26 +112,4 @@
     border: 1px solid black;
   }
 
-  #dialog {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-  }
-
-  #dialogContent {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-  }
-
-  #dialogContent button {
-    margin-top: 10px;
-  }
+  
