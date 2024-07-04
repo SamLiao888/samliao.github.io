@@ -16,7 +16,7 @@
   table {
     border-collapse: collapse;
     width: 100%;
-    margin-top: 0mm; /* 將表格往上移 */
+    margin-top: -3mm; /* 將表格往上移 */
     margin-left: auto; /* 將表格置中 */
     margin-right: auto; /* 將表格置中 */
     border-spacing: 0; /* 設置表格的邊距 */
@@ -93,7 +93,7 @@
   }
   .input-textarea {
     width: 100%; /* 設置輸入框的寬度 */
-    height: 30mm; /* 設置輸入框的高度 */
+    height: 25mm; /* 設置輸入框的高度 */
     padding: 2px; /* 設置輸入框的內距 */
     font-family: "標楷體"; /* 設置文字的字型 */
     border: none; /* 將表格的邊框修改成無 */
