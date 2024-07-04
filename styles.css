@@ -48,7 +48,7 @@
     /* width: calc(100% / 8); 設置每個儲存格的寬度 */
     /* width: calc(210mm / 8); */
     width: 26.25mm;
-   height: 5mm; 
+   height: 4.5mm; 
   }
 
   .company-text {
@@ -90,7 +90,7 @@
   .input-textarea {
     width: 90%; /* 設置輸入框的寬度 */
     height: 25mm; /* 設置輸入框的高度 */
-    padding: 2px; /* 設置輸入框的內距 */
+    padding: 1px; /* 設置輸入框的內距 */
     font-family: "標楷體"; /* 設置文字的字型 */
     border: none; /* 將表格的邊框修改成無 */
     white-space: pre-wrap; /* 設置文字換行 */
@@ -105,7 +105,7 @@
   }
   select {
     width: 100%;
-    padding: 5px;
+    padding: 2px;
     border: none;
     appearance: none; /* 將下拉選單的箭頭覆蓋掉 */
     font-family: "標楷體"; /* 設置文字的字型 */
