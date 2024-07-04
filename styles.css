@@ -1,3 +1,16 @@
+@media print {
+  /* 隱藏網址 */
+  .url {
+    display: none !important;
+  }
+
+  /* 隱藏列印日期 */
+  .date {
+    display: none !important;
+  }
+}
+
+
 .container {
     width: 210mm; /* A4 紙張寬度 */
     /* height: 297mm; A4 紙張高度 */
@@ -45,7 +58,7 @@
   }
 
   td {
-    padding: 5px; /* 設置儲存格的內距 */
+    padding: 2px; /* 設置儲存格的內距 */
     border: 1px solid black; /*設置儲存格的邊框 */
     text-align: center; /*將文字置中 */
     font-size: 12px; /* 設置字體大小 */
@@ -85,22 +98,21 @@
     font-weight: bold; /* 設置文字為粗體 */
   }
   .input-box {
-    width: 100%; /* 設置輸入框的寬度 */
+    width: 90%; /* 設置輸入框的寬度 */
     height: 90%; /* 設置輸入框的高度 */
-    padding: 2px; /* 設置輸入框的內距 */
+    padding: 1px; /* 設置輸入框的內距 */
     font-family: "標楷體"; /* 設置文字的字型 */
     border: none; /* 將表格的邊框修改成無 */
   }
   .input-textarea {
-    width: 100%; /* 設置輸入框的寬度 */
+    width: 90%; /* 設置輸入框的寬度 */
     height: 25mm; /* 設置輸入框的高度 */
     padding: 2px; /* 設置輸入框的內距 */
     font-family: "標楷體"; /* 設置文字的字型 */
     border: none; /* 將表格的邊框修改成無 */
     white-space: pre-wrap; /* 設置文字換行 */
     word-break: break-all; /* 設置文字在到達邊界時自動斷行 */
-    top: 0;
-    left: 0;
+   
   }
   .check-box {
     width: 12px; /* 設置輸入框的寬度 */
