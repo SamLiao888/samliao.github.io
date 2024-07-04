@@ -29,7 +29,7 @@
   table {
     border-collapse: collapse;
     width: 100%;
-    margin-top: -3mm; /* 將表格往上移 */
+    margin-top: 0mm; /* 將表格往上移 */
     margin-left: auto; /* 將表格置中 */
     margin-right: auto; /* 將表格置中 */
     border-spacing: 0; /* 設置表格的邊距 */
@@ -40,7 +40,7 @@
   .table_2 {
     border-collapse: collapse;
     width: 200mm; /* A4 紙張寬度 */
-    margin-top: -0.5mm; /* 將表格往上移 */
+    margin-top: 0mm; /* 將表格往上移 */
     margin-left: auto; /* 將表格置中 */
     margin-right: auto; /* 將表格置中 */
     border-spacing: 2px; /* 設置表格的邊距 */
@@ -65,7 +65,7 @@
     /* width: calc(100% / 8); 設置每個儲存格的寬度 */
     /* width: calc(210mm / 8); */
     width: 26.25mm;
-    /* height: 3mm; */
+   height: 8mm; 
   }
 
   .company-text {
