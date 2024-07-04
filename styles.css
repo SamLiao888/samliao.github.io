@@ -1,3 +1,5 @@
+@font-face { font-family: '標楷體'; src: url('標楷體.ttf') format('truetype');
+}
 .container {
     width: 190mm; /* A4 紙張寬度 */
     height: 225mm; /* A4 紙張高度 */ 
@@ -40,6 +42,7 @@
     border: 1px solid black; /*設置儲存格的邊框 */
     text-align: center; /*將文字置中 */
     font-size: 12px; /* 設置字體大小 */
+    font-family: '標楷體', sans-serif;
     /* width: calc(100% / 8); 設置每個儲存格的寬度 */
     /* width: calc(210mm / 8); */
     width: 26.25mm;
