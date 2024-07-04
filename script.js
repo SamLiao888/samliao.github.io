@@ -9,7 +9,7 @@ function openSignaturePad(row, col) {
 function confirmSignature() {
   const signatureData = signaturePad.toDataURL();
   // currentCell.innerHTML = `<img src="${signatureData}" style="max-width: 100px; max-height: 100px;">`;
-  currentCell.innerHTML = `<img src="${signatureData}" style="max-width: 100px; max-height: 100px;">`;
+  currentCell.innerHTML = `<img src="${signatureData}" style="max-width: 80px; max-height: 50px;">`;
   document.getElementById('signatureModal').style.display = 'none';
 }
 
