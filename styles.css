@@ -12,7 +12,7 @@
 
 
 .container {
-    width: 210mm; /* A4 紙張寬度 */
+    width: 200mm; /* A4 紙張寬度 */
     /* height: 297mm; A4 紙張高度 */
     margin-left: auto; /* 將表格置中 */
     margin-right: auto; /* 將表格置中 */
@@ -20,7 +20,7 @@
     padding: 0mm; /* 設置容器內部的內距 */
   }
   .container_2 {
-    width: 210mm; /* A4 紙張寬度 */
+    width: 200mm; /* A4 紙張寬度 */
     /* height: 297mm; A4 紙張高度 */
     margin: 0 auto; /* 水平置中 */
     padding: 0mm; /* 設置容器內部的內距 */
@@ -39,7 +39,7 @@
 
   .table_2 {
     border-collapse: collapse;
-    width: 210mm; /* A4 紙張寬度 */
+    width: 200mm; /* A4 紙張寬度 */
     margin-top: -0.5mm; /* 將表格往上移 */
     margin-left: auto; /* 將表格置中 */
     margin-right: auto; /* 將表格置中 */
@@ -48,7 +48,7 @@
   }
   .table_3 {
     border-collapse: collapse;
-    width: 210mm; /* A4 紙張寬度 */
+    width: 200mm; /* A4 紙張寬度 */
     height: 10mm; /*A4 紙張高度 */
     margin-top: 0mm; /* 將表格往上移 */
     margin-left: auto; /* 將表格置中 */
