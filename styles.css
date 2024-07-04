@@ -36,7 +36,7 @@
   }
 
   td {
-    padding: 1px; /* 設置儲存格的內距 */
+    padding: 0px; /* 設置儲存格的內距 */
     border: 1px solid black; /*設置儲存格的邊框 */
     text-align: center; /*將文字置中 */
     font-size: 12px; /* 設置字體大小 */
