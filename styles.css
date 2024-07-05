@@ -60,47 +60,47 @@
   .address-text {
     font-size: 18px; /* 設置特定儲存格的字體大小 */
     text-align: left; /* 將文字靠左排列 */
-    font-family: "標楷體"; /* 設置文字的字型 */
+     font-family: "標楷體"; /*設置文字的字型 */
     font-weight: bold; /* 設置文字為粗體 */
   }
   .left-align {
     font-size: 16px; /* 設置特定儲存格的字體大小 */
     text-align: left; /* 將文字靠左排列 */
-    font-family: "標楷體"; /* 設置文字的字型 */
+    /* font-family: "標楷體"; 設置文字的字型 */
     font-weight: bold; /* 設置文字為粗體 */
   }
   .right-align {
     font-size: 16px; /* 設置特定儲存格的字體大小 */
     text-align: right; /* 將文字靠右排列 */
-    font-family: "標楷體"; /* 設置文字的字型 */
+    /* font-family: "標楷體"; 設置文字的字型 */
     font-weight: bold; /* 設置文字為粗體 */
   }
   .center-align {
     font-size: 16px; /* 設置特定儲存格的字體大小 */
     text-align: center; /* 將文字置中排列 */
-    font-family: "標楷體"; /* 設置文字的字型 */
+    /* font-family: "標楷體"; 設置文字的字型 */
     font-weight: bold; /* 設置文字為粗體 */
   }
   .input-box {
     width: 90%; /* 設置輸入框的寬度 */
     height: 80%; /* 設置輸入框的高度 */
     padding: 1px; /* 設置輸入框的內距 */
-    font-family: "標楷體"; /* 設置文字的字型 */
+    /* font-family: "標楷體"; 設置文字的字型 */
     border: none; /* 將表格的邊框修改成無 */
   }
   .input-textarea {
     width: 90%; /* 設置輸入框的寬度 */
     height: 25mm; /* 設置輸入框的高度 */
     padding: 1px; /* 設置輸入框的內距 */
-    font-family: "標楷體"; /* 設置文字的字型 */
+    /* font-family: "標楷體"; 設置文字的字型 */
     border: none; /* 將表格的邊框修改成無 */
     white-space: pre-wrap; /* 設置文字換行 */
     word-break: break-all; /* 設置文字在到達邊界時自動斷行 */
    
   }
   .check-box {
-    width: 12px; /* 設置輸入框的寬度 */
-    height: 12px; /* 設置輸入框的高度 */
+    width: 10px; /* 設置輸入框的寬度 */
+    height: 10px; /* 設置輸入框的高度 */
     padding: 2px; /* 設置輸入框的內距 */
     border: none; /* 將表格的邊框修改成無 */
   }
@@ -109,7 +109,7 @@
     padding: 1px;
     border: none;
     appearance: none; /* 將下拉選單的箭頭覆蓋掉 */
-    font-family: "標楷體"; /* 設置文字的字型 */
+    font-family: "標楷體";/*  設置文字的字型 */
   }
   #signatureCanvas {
     border: 1px solid black;
