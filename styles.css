@@ -44,7 +44,8 @@
     border: 1px solid black; /*設置儲存格的邊框 */
     text-align: center; /*將文字置中 */
     font-size: 11px; /* 設置字體大小 */
-    font-family: '標楷體', sans-serif;
+    /* font-family: '標楷體', sans-serif; */
+    font-family: "標楷體"; /* 設置文字的字型 */
     /* width: calc(100% / 8); 設置每個儲存格的寬度 */
     /* width: calc(210mm / 8); */
     width: 26.25mm;
