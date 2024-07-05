@@ -1,8 +1,8 @@
-/* @font-face { font-family: '標楷體'; src: url('kaiu.ttf') format('truetype');
-} */
+@font-face { font-family: '標楷體'; src: url('kaiu.ttf') format('truetype');
+}
 .container {
     width: 180mm; /* A4 紙張寬度 */
-    height: 210mm; /* A4 紙張高度 */ 
+    height: 200mm; /* A4 紙張高度 */ 
     margin-left: auto; /* 將表格置中 */
     margin-right: auto; /* 將表格置中 */
     margin: 0 auto; /* 水平置中 */
@@ -105,7 +105,7 @@
   }
   select {
     width: 100%;
-    padding: 2px;
+    padding: 1px;
     border: none;
     appearance: none; /* 將下拉選單的箭頭覆蓋掉 */
     font-family: "標楷體"; /* 設置文字的字型 */
