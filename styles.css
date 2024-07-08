@@ -1,15 +1,15 @@
-/* @font-face { font-family: '標楷體'; src: url('kaiu.ttf') format('truetype');
-} */
+@font-face { font-family: '標楷體'; src: url('kaiu.ttf') format('truetype');
+}
 .container {
-    width: 185mm; /* A4 紙張寬度 */
-    height: 225mm; /* A4 紙張高度 */ 
+    width: 190mm; /* A4 紙張寬度 */
+    height: 230mm; /* A4 紙張高度 */ 
     margin-left: auto; /* 將表格置中 */
     margin-right: auto; /* 將表格置中 */
     margin: 0 auto; /* 水平置中 */
     padding: 0mm; /* 設置容器內部的內距 */
   }
   .container_2 {
-    width: 185mm; /* A4 紙張寬度 */
+    width: 190mm; /* A4 紙張寬度 */
     margin-left: auto; /* 將表格置中 */
     margin-right: auto; /* 將表格置中 */
     /* height: 297mm; A4 紙張高度 */
@@ -48,8 +48,8 @@
     font-family: "標楷體"; /* 設置文字的字型 */
     /* width: calc(100% / 8); 設置每個儲存格的寬度 */
     /* width: calc(210mm / 8); */
-    width: 26.25mm;
-    height: 4.5mm; 
+    width: 23.75mm;
+   height: 4mm; 
   }
 
   .company-text {
