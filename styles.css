@@ -2,7 +2,7 @@
 }
 .container {
     width: 190mm; /* A4 紙張寬度 */
-    height: 230mm; /* A4 紙張高度 */ 
+    height: 220mm; /* A4 紙張高度 */ 
     margin-left: auto; /* 將表格置中 */
     margin-right: auto; /* 將表格置中 */
     margin: 0 auto; /* 水平置中 */
