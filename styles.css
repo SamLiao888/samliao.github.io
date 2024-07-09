@@ -1,7 +1,7 @@
 /* @font-face { font-family: '標楷體'; src: url('kaiu.ttf') format('truetype');
 } */
 .container {
-    width: 190mm; /* A4 紙張寬度 */
+    width: 200mm; /* A4 紙張寬度 */
     height: 220mm; /* A4 紙張高度 */ 
     margin-left: auto; /* 將表格置中 */
     margin-right: auto; /* 將表格置中 */
